@@ -1,0 +1,22 @@
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+
+// NAVBAR
+
+.navbar-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent !important;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+.navbar-container a {
+    color: white; /* Adjust as needed */
+    text-decoration: none;
+    padding: 10px;
+}
