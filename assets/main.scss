@@ -1,0 +1,241 @@
+/*-- scss:defaults --*/
+
+$artist: #E4475B;
+$adventurer: #E06033;
+$producer: #45A9AB;
+$innovator: #365AA1;
+$pink:#DD95A0;
+
+$primary: $innovator;
+//$secondary: #FAE8D3;
+$secondary:  white;
+//$button-text: #255F85;
+$button-text: $innovator;
+$button-bg:#EDEBA0;
+$font-raleway: 'Raleway', sans-serif;
+$font-petrona: 'Petrona';
+$font-open-sans: 'Open Sans', sans-serif;
+
+/*-- scss:rules --*/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.navbar-inner {
+  background: transparent;
+}
+
+#quarto-content>* {
+  padding-top: 0px !important;
+}
+
+#container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#left-column, #right-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+#left-column {
+  width: 50%;
+  background-color: $primary;
+  color: $secondary;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  text-align: left;
+
+  .inner-wrap {
+    padding: 20px;
+    max-width: 700px;
+  }
+
+  h1 {
+    font-size: 7rem !important;
+    margin-bottom: 20px;
+    font-family: $font-raleway;
+    font-weight: 500;
+  }
+  
+  a {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    color: #DD95A0;
+  }
+
+  #sub-hero-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 10px 0 20px;
+    font-family: $font-petrona;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  #description-text {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-family: $font-open-sans;
+  }
+
+  #buttons {
+    display: flex;
+    gap: 20px;
+
+    .btn {
+      font-size: 1rem;
+      padding: 20px 30px;
+      margin: 10px 10px 20px;
+      color: $button-text;
+      background-color: $button-bg;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: $font-open-sans;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: lighten($pink, 10%);
+        color: darken($button-text, 10%);
+      }
+    }
+    
+    .btn:nth-child(2) {
+    color: $button-bg;
+    background-color: $primary;
+    border: 2px solid $button-bg;
+    
+      &:hover {
+        background-color: lighten($pink, 10%);
+        color: darken($button-text, 10%);
+      }
+    }
+    
+  }
+}
+
+#right-column {
+  width: 50%;
+  background-color: $primary;
+  justify-content: flex-end;
+  overflow: hidden;
+
+  video {
+    width: 100%;
+    height: auto;
+    transform: scale(.9);
+    transform-origin: bottom;
+    transition: transform 5s ease-in-out;
+    z-index: 1000;
+  }
+}
+
+// Responsive styles
+
+@media (max-width: 1200px) {
+  #left-column {
+    width: 60%;
+  }
+
+  #right-column {
+    width: 40%;
+  }
+}
+
+@media (max-width: 992px) {
+  #container {
+    flex-direction: column;
+  }
+
+  #left-column, #right-column {
+    width: 100%;
+    height: 50vh;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  #description-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #description-text {
+    font-size: 1rem;
+  }
+}
+
+// Footer
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 2000;
+}
+
+.nav-footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: center;
+  padding: .5rem 0;
+  width: 100%;
+  background-color: transparent !important;
+  color: $secondary !important;
+
+  .nav-footer-left,
+  .nav-footer-center,
+  .nav-footer-right {
+    flex: 1;
+  }
+
+  .nav-footer-center {
+    text-align: center;
+  }
+
+  a {
+    color: $secondary !important;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Import font
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');

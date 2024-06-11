@@ -1,19 +1,44 @@
 project:
   type: website
+  output-dir: _site
+  resources: 
+    - assets/artist.mp4
 
 website:
-  title: "mirianlima.github.io"
+  title: "Mirian Spencer Lima"
+  site-url: https://mirianlima.github.io/
+  description: "Policy Researcher and data expert, applying economic development data science in favor of evidence-based public policy making."
+  favicon: assets/m.png
+  page-navigation: true
+  back-to-top-navigation: true
+  
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+    logo: assets/m.png
+    tools:
+    - icon: github
+      href: https://mirianlima.github.io
+    right:
+      - text: About
+        aria-label: "About Me"
+        href: about/index.qmd
+        
+  page-footer:  
+    left: >-
+     &#169; 2024 Mirian Lima &#8729; 
+     <a href="https://github.com/mirianlima" title="github" target="_blank" rel="noopener">{{< fa brands github >}}</a>
+     <a href="https://www.linkedin.com/in/mspencerlima" title="LinkedIn" target="_blank" rel="noopener">{{< fa brands linkedin >}}</a>
+     &#8729;
+     Made with [Quarto](https://quarto.org)
+     &#8729;
+     Video from the [Adobe Creative Types](https://mycreativetype.com/the-creative-types/)
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: [cosmo, assets/main.scss]
     toc: true
+    pagetitle: "{{< meta title >}} | Mirian Lima"
+    lightbox: true
+    code-link: true
 
-
-
+execute: 
+  freeze: auto

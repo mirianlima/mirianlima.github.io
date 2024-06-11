@@ -1,11 +1,54 @@
 ---
-title: "mirianlima.github.io"
+title: ""
+page-layout: custom
+execute: 
+  freeze: false
+  echo: false
+  warning: false
 ---
 
-This is a Quarto website.
+<style>
+/* CSS specific to the index.html page */
+.navbar-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent !important;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box; 
+    color: white;
+}
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+.navbar-container a {
+    color: white; /* Adjust as needed */
+    text-decoration: none;
+    padding: 10px;
+}
 
-```{r}
-1 + 1
-```
+#quarto-header {
+    display: none;
+}
+</style>
+
+<div id="container">
+<div id="left-column">
+<div class="inner-wrap">
+<h1 id="hero-text">hi, <br> I'm Mirian</h1>
+<a href="https://github.com/mirianlima" title="github" target="_blank" rel="noopener">{{< fa brands github >}}</a>
+<a href="https://www.linkedin.com/in/mspencerlima" title="LinkedIn" target="_blank" rel="noopener">{{< fa brands linkedin >}}</a>
+<p id="description-text">I am a computational policy researcher, with a background in public interest technology, social research methods, and economic development policy analysis, design & evaluation.</p>
+<div id="buttons">
+<a href="#" class="btn">View my projects</a>
+<a href="#" class="btn">Read my blog</a>
+</div>
+</div>
+</div>
+<div id="right-column">
+<video autoplay muted loop preload="true" webkit-playsinline playsinline>
+<source src="assets/innovator-web.mp4" type="video/mp4"> Your browser does not support the video tag.
+</video>
+</video>
+</div>
+</div>
