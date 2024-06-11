@@ -26,6 +26,36 @@ html, body {
   overflow: hidden;
 }
 
+.navbar-title {
+  &:hover {
+    color: $pink;
+
+    > .icon-line {
+      animation: line-expand 600ms;
+    }
+  }
+
+  .icon-line {
+    display: block;
+    background: $pink;
+    width: 100%;
+    height: 3px;
+    margin: auto;
+    display: table;
+    margin-top: -6px;
+    margin-bottom: -6px;
+  }
+}
+
+@keyframes line-expand {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 .navbar-inner {
   background: transparent;
 }

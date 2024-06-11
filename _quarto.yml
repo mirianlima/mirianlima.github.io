@@ -5,15 +5,15 @@ project:
     - assets/artist.mp4
 
 website:
-  title: "Mirian Spencer Lima"
+  title: "Mirian Lima"
   site-url: https://mirianlima.github.io/
   description: "Policy Researcher and data expert, applying economic development data science in favor of evidence-based public policy making."
-  favicon: assets/m.png
+  favicon: assets/fav.png
   page-navigation: true
   back-to-top-navigation: true
   
   navbar:
-    logo: assets/m.png
+    title: "MIRIAN<span class='icon-line'></span>LIMA"
     tools:
     - icon: github
       href: https://mirianlima.github.io
