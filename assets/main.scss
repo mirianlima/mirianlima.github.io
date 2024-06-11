@@ -5,13 +5,15 @@ $adventurer: #E06033;
 $producer: #45A9AB;
 $innovator: #365AA1;
 $pink:#DD95A0;
+$off-white:#FAF9F6;
+$dark-blue: #255F85;
+$beige: #FAE8D3;
+$yellow:#EDEBA0;
 
 $primary: $innovator;
-//$secondary: #FAE8D3;
 $secondary:  white;
-//$button-text: #255F85;
 $button-text: $innovator;
-$button-bg:#EDEBA0;
+$button-bg: $yellow;
 $font-raleway: 'Raleway', sans-serif;
 $font-petrona: 'Petrona';
 $font-open-sans: 'Open Sans', sans-serif;
@@ -63,17 +65,30 @@ html, body {
     max-width: 800px;
   }
 
-  h1 {
-    font-size: 7rem !important;
+  .header-links {
+    display: flex;
+    align-items: end;
     margin-bottom: 20px;
-    font-family: $font-raleway;
-    font-weight: 500;
-  }
-  
-  a {
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    color: #DD95A0;
+    
+    h1 {
+      font-size: 5rem !important;
+      font-family: $font-raleway;
+      font-weight: 500;
+      margin-right: 10px;
+    }
+    
+    a {
+      font-size: 1.3rem;
+      letter-spacing: 0.1em;
+      color: $pink;
+      margin-right: 2px;
+      position: relative;
+      top: -50px;
+      
+      &:hover {
+        color: $yellow;
+      }
+    }
   }
 
   #sub-hero-text {
@@ -86,14 +101,15 @@ html, body {
   }
 
   #description-text {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     font-family: $font-open-sans;
   }
 
   #buttons {
     display: flex;
+    gap: 20px;
 
     .btn {
       font-size: 1rem;
@@ -117,16 +133,15 @@ html, body {
     }
     
     .btn:nth-child(2) {
-    color: $button-bg;
-    background-color: $primary;
-    border: 2px solid $button-bg;
-    
+      color: $button-bg;
+      background-color: $primary;
+      border: 2px solid $button-bg;
+      
       &:hover {
         background-color: lighten($pink, 10%);
         color: darken($button-text, 10%);
       }
     }
-    
   }
 }
 
@@ -213,12 +228,15 @@ html, body {
   padding: .5rem 0;
   width: 100%;
   background-color: transparent !important;
-  color: $secondary !important;
+  color: $off-white !important;
 
-  .nav-footer-left,
+  .nav-footer-left {
+    flex: 1;
+  }
+  
   .nav-footer-center,
   .nav-footer-right {
-    flex: 1;
+    display: none;
   }
 
   .nav-footer-center {
@@ -226,11 +244,11 @@ html, body {
   }
 
   a {
-    color: $secondary !important;
-    text-decoration: none;
+    color: $off-white !important;
+    text-decoration-color: $off-white;
 
     &:hover {
-      text-decoration: underline;
+      background: $pink;
     }
   }
 }

@@ -32,9 +32,11 @@ execute:
 <div id="container">
 <div id="left-column">
 <div class="inner-wrap">
+<div class="header-links">
 <h1 id="hero-text">hi, <br> I'm Mirian</h1>
 <a href="https://github.com/mirianlima" title="github" target="_blank" rel="noopener">{{< fa brands github >}}</a>
 <a href="https://www.linkedin.com/in/mspencerlima" title="LinkedIn" target="_blank" rel="noopener">{{< fa brands linkedin >}}</a>
+</div>
 <p id="description-text">I am a computational policy researcher, with a background in public interest technology, social research methods, and economic development policy analysis, design & evaluation.</p>
 <div id="buttons">
 <a href="#" class="btn">View my projects</a>
@@ -46,6 +48,6 @@ execute:
 <video autoplay muted loop preload="true" webkit-playsinline playsinline>
 <source src="assets/innovator-web.mp4" type="video/mp4"> Your browser does not support the video tag.
 </video>
-</video>
 </div>
 </div>
+
