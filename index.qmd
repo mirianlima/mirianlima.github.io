@@ -27,9 +27,6 @@ execute:
     padding: 10px;
 }
 
-#quarto-header {
-    display: none;
-}
 </style>
 
 <div id="container">
