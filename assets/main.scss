@@ -27,13 +27,10 @@ html, body {
 }
 
 .navbar-title {
-  &:hover {
-    color: $pink;
-
-    > .icon-line {
+  &:hover > .icon-line {
+      color: $pink;
       animation: line-expand 600ms;
     }
-  }
 
   .icon-line {
     display: block;
