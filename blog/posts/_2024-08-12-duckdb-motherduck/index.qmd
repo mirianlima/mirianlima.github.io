@@ -6,7 +6,7 @@ categories: [Quarto, DuckDB, R, Motherduck, ETL]
 citation: 
   url: https://mirianlima.github.io/posts/2024-08-12-duckdb-motherduck
 image: colors.jpg
-draft: false
+draft: true
 editor_options: 
   chunk_output_type: console
 ---
