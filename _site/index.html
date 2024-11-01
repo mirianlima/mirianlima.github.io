@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.40">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mirian Lima –  | Mirian Lima</title>
+<title> | Mirian Lima – Mirian Lima</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed">
+<body class="bg-dark cover-container nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -91,13 +91,13 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about/index.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./blog/index.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://mirianlima.github.io" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/mirianlima/mirianlima.github.io" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -112,52 +112,39 @@ ul.task-list li input[type="checkbox"] {
 
 
 <style>
-/* CSS specific to the index.html page */
-.navbar-container {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background: transparent !important;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    box-sizing: border-box; 
-    color: white;
+footer {
+    position: fixed;
+    bottom: 0;
+    visibility: hidden;
 }
 
-.navbar-container a {
-    color: white; /* Adjust as needed */
-    text-decoration: none;
-    padding: 10px;
+.quarto-container{
+    width: 100%; 
+    height: 100vh; 
+    overflow: hidden;
 }
-
 </style>
-<div id="container">
-<div id="left-column">
-<div class="inner-wrap">
-<div class="header-links">
-<h1 id="hero-text">
-hi, <br> I’m Mirian
+
+<div class="grid">
+<div class="g-col-6">
+<div class="d-flex flex-column ms-5 mt-5">
+<h1 class="display-4 fw-bold lh-1">
+Welcome!
 </h1>
-<p><a href="https://github.com/mirianlima" title="github" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-label="github"></i></a> <a href="https://www.linkedin.com/in/mspencerlima" title="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i></a></p>
-</div>
-<p id="description-text">
-I am a computational policy researcher, with a background in public interest technology, social research methods, and economic development policy analysis, design &amp; evaluation.
+<p class="lead">
+Data is my playground. Whether it’s wrangling, visualizing, or modeling, I love diving into the details. Right now, I’m exploring in-memory and hybrid analytics, experimenting with the latest tools to build pipelines to enable faster, more flexible analysis. Dive in to explore posts, projects, and musings as I navigate new frontiers in data bit by bit!
 </p>
-<div id="buttons">
-<p><a href="#" class="btn">View my projects</a> <a href="#" class="btn">Read my blog</a></p>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-start ms-5">
+<p><!-- <a href="/about" class="btn btn-light btn-lg px-4 me-md-2">About me</a> --> <a href="./blog" class="btn btn-outline-secondary btn-lg px-4 text-white border-white">My Blog</a></p>
 </div>
 </div>
-</div>
-<div id="right-column">
-<video autoplay="" muted="" loop="" preload="true" webkit-playsinline="" playsinline="">
-<source src="assets/innovator-web.mp4" type="video/mp4">
-Your browser does not support the video tag. </video>
+<div class="g-col-6">
+<p><img src="assets/images/strip-dark.png" alt="Girl in a jacket" width="100%" height="100%" object-fit="contain"></p>
 </div>
 </div>
 
 
-</div>
 
 
 
@@ -267,6 +254,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -581,15 +575,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
- <!-- /content -->
+</div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2024 Mirian Lima ∙ <a href="https://github.com/mirianlima" title="github" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-label="github"></i></a> <a href="https://www.linkedin.com/in/mspencerlima" title="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i></a> ∙ Made with <a href="https://quarto.org">Quarto</a> ∙ Video image from the lovely <a href="https://mycreativetype.com/the-creative-types/">Adobe Creative Types</a></p>
-</div>   
-    <div class="nav-footer-center">
       &nbsp;
-    </div>
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2024 Mirian Lima ∙ <a href="https://github.com/mirianlima" class="connect" title="github" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-label="github"></i></a> <a href="https://www.linkedin.com/in/mspencerlima" class="connect" title="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-label="linkedin"></i></a> ∙ Made with <a href="https://quarto.org">Quarto</a></p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

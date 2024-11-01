@@ -1,0 +1,59 @@
+---
+title: "Computational Analytics for Public Policy"
+subtitle: "This is where I write about what I learn and what I realize I still don't know. You might find content with code-based (R/Python) tutorials or just ramblings about the practicalities of implementing evidence-based policy making in the context of public institutions."
+listing: 
+  contents: posts
+  type: grid
+  sort: "date desc"
+  categories: true
+toc: true
+page-layout: full
+title-block-banner: "black"
+---
+
+<style>
+  body {
+    background-color: white;
+  }
+
+  .quarto-title-banner.page-columns.page-full > div > h1 {
+    color: #ffffff; // Use full hex for better readability
+  }
+
+  .quarto-title-banner {
+    color: aliceblue;
+  }
+
+  p.subtitle.lead,
+  .quarto-categories > .quarto-category {
+    color: #ffffff; // Use consistent hex format
+  }
+
+  #listing-listing .card {
+    border: transparent;
+    box-shadow: 1.3px 2.6px 2.6px hsla(0, 0%, 0%, 0.46); // Use `hsla` for clarity and flexibility
+    transition: border-color 0.3s ease;
+  }
+
+  #listing-listing .card h5 {
+    font-weight: bold;
+  }
+
+  #listing-listing .listing-category {
+    background-color: #FFE2D1;
+  }
+
+  #listing-listing .card-attribution.card-text-small.justify {
+    color: #35594E;
+  }
+
+  #listing-listing .card:hover {
+    border-color: #365AA1;
+  }
+
+  #quarto-margin-sidebar > h5 {
+    color: #365AA1;
+    margin-top: 10px;
+  }
+</style>
+

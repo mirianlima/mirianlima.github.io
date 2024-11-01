@@ -1,0 +1,49 @@
+---
+title: "Testing python run"
+jupyter: python3
+---
+
+```{python}
+import duckdb
+# Initialize DuckDB connection
+con = duckdb.connect()
+
+# Define the base path
+base_path = '/Users/mlima/Code/mirianlima.github.io/blog/posts/2024-08-12-duckdb-motherduck/data/'
+```
+
+```{python}
+c_age1 = con.read_csv(f'{base_path}c_age1.csv')
+c_dem = con.read_csv(f'{base_path}c_dem.csv')
+```
+
+```{python}
+agg_age_data = (
+  c_age1
+  .filter("age_labor IN ('Younger Prime-age Workers (25-34)', 'Older Prime-age Workers (35-54)')")
+  .project("""
+      iso3_code, 
+      time,
+      CASE 
+          WHEN age_labor = 'Younger Prime-age Workers (25-34)' THEN 'prime_younger'
+          WHEN age_labor = 'Older Prime-age Workers (35-54)' THEN 'prime_older'
+      END AS age_labor_group,
+      pop_total
+  """)
+  .aggregate("""
+      iso3_code, 
+      time, 
+      age_labor_group, 
+      SUM(pop_total) AS total_population
+  """)
+  .aggregate("""
+      iso3_code, 
+      time,
+      SUM(CASE WHEN age_labor_group = 'prime_younger' THEN total_population ELSE 0 END) AS prime_younger,
+      SUM(CASE WHEN age_labor_group = 'prime_older' THEN total_population ELSE 0 END) AS prime_older
+  """)
+ )
+ 
+agg_age_data.limit(6).show()
+```
+

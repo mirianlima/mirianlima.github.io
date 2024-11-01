@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: _site
   resources: 
-    - assets/artist.mp4
+    - assets
 
 website:
   title: "Mirian Lima"
@@ -16,21 +16,21 @@ website:
     title: "MIRIAN<span class='icon-line'></span>LIMA"
     tools:
     - icon: github
-      href: https://mirianlima.github.io
+      href: https://github.com/mirianlima/mirianlima.github.io
     right:
-      - text: About
-        aria-label: "About Me"
-        href: about/index.qmd
+    - text: "Blog"
+      aria-label: "Blog"
+      href: blog/index.qmd
+        # aria-label: "About Me"
+        # href: about/index.qmd
         
   page-footer:  
-    left: >-
+    center: >-
      &#169; 2024 Mirian Lima &#8729; 
-     <a href="https://github.com/mirianlima" title="github" target="_blank" rel="noopener">{{< fa brands github >}}</a>
-     <a href="https://www.linkedin.com/in/mspencerlima" title="LinkedIn" target="_blank" rel="noopener">{{< fa brands linkedin >}}</a>
+     <a href="https://github.com/mirianlima" class="connect" title="github" target="_blank" rel="noopener">{{< fa brands github >}}</a>
+     <a href="https://www.linkedin.com/in/mspencerlima" class="connect" title="LinkedIn" target="_blank" rel="noopener">{{< fa brands linkedin >}}</a>
      &#8729;
      Made with [Quarto](https://quarto.org)
-     &#8729;
-     Video image from the lovely [Adobe Creative Types](https://mycreativetype.com/the-creative-types/)
 
 format:
   html:
@@ -39,6 +39,8 @@ format:
     pagetitle: "{{< meta title >}} | Mirian Lima"
     lightbox: true
     code-link: true
+    link-external-icon: true
+    link-external-newwindow: true
 
 execute: 
   freeze: auto

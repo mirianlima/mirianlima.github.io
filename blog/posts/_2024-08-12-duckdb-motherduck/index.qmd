@@ -1,0 +1,50 @@
+---
+title: "DuckDB & Motherduck"
+description: "Testing the use of the DuckDB & Motherduck duo for data transformation"
+date: 10-23-2022
+categories: [Quarto, DuckDB, R, Motherduck, ETL]
+citation: 
+  url: https://mirianlima.github.io/posts/2024-08-12-duckdb-motherduck
+image: colors.jpg
+draft: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+pacman::p_load(
+  tidyverse,
+  duckdb,
+  duckplyr
+)
+```
+
+```{r}
+ con <- dbConnect(duckdb(), dbdir = "/Users/mlima/Code/mirianlima.github.io/blog/posts/2024-08-12-duckdb-motherduck/duckdb_test.db", read_only = TRUE)
+```
+
+
+```{r}
+con |> 
+  tbl("c_dem") |> 
+  count(region) |> 
+  collect()
+```
+
+```{r}
+con |> 
+  tbl("c_age1") |> 
+  count(region) |> 
+  collect()
+```
+
+```{r}
+con |> 
+  tbl("c_age1") |> 
+  glimpse() |> 
+  collect()
+```
+
+<hr class="dashed">
+
+Photo by <a href="https://unsplash.com/@ro_ka?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Robert Katzki</a> on <a href="https://unsplash.com/photos/multicolored-wall-in-shallow-focus-photography-jbtfM0XBeRc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
