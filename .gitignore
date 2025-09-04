@@ -5,5 +5,6 @@
 .DS_Store
 
 /adobe_creatives/
+/_archive/
 /.quarto/
 /blog/posts/_2024-08-12-duckdb-motherduck/data/

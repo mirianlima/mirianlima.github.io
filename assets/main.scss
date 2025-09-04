@@ -1,34 +1,105 @@
-/*-- scss:defaults --*/
-$pink:#DD95A0;
-$link: #5A7BCA;
-$dark:#000;
-$font-raleway: 'Raleway', sans-serif;
-$navbar-bg: #000 !default;
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
 
-// FONTS
+/* Colors */
+$color-accent:        #FF5C00;   // primary accent / links / highlights
+$color-text:          #676169;   // main body text
+$color-text-muted:    #868187;   // secondary text
+$color-bg:            #fafcf8;   // page background / navbar background
+$color-dark:          #000000;   // black
+// $color-footer-bg:     #F4F4F5;   // footer background
+$color-hero-secondary:#E4DDD7;   // pill background
+$color-hero-muted:    hsl(220 10% 45%); // muted foreground in hero
+$color-selection-fg:  #F9FCF7;   // text color on ::selection
+$color-primary-ink:   #514E54;   // solid button ink (your current btn-primary)
 
+/* Gradients & shadows */
+$hero-gradient-subtle: linear-gradient(180deg, hsl(0 0% 99%), hsl(220 10% 97%));
+$hero-shadow-soft:     0 2px 10px -2px hsl(220 10% 45% / 0.08);
+
+/* Typography */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300..700&display=swap');
 
-$body-font-family: "Source Sans Pro", sans-serif !default;
-$headings-font-family: "Raleway", sans-serif !default;
+$font-raleway:          'Raleway', sans-serif;
+$body-font-family:      "Source Sans Pro", sans-serif !default;
+$headings-font-family:  "Raleway", sans-serif !default;
+$code-font-family:      "Fira Code", monospace !default;
 
-$body-font-weight: 300 !default;
-$headings-font-weight: 700 !default;
-$code-font-family: "Fira Code", monospace !default;
+$body-font-weight:      300 !default;
+$headings-font-weight:  700 !default;
 
-$body-font-size: 1rem !default;
-$headings-font-size: 1.5rem !default;
-$h1-font-size: 2.5rem !default;
-$h2-font-size: 2rem !default;
+$body-font-size:        2rem !default;
+$headings-font-size:    1.5rem !default;
+$h1-font-size:          3rem !default;
+$h2-font-size:          2rem !default;
+
+/* Hero sizes */
+$hero-title-size-mobile:   3.5rem;
+$hero-title-size-desktop:  6rem;
+
+/* Breakpoints (mobile-first) */
+$bp-mobile:  0;
+$bp-tablet:  768px;
+$bp-desktop: 1200px;
+
+/* Optional mixins (not required) */
+@mixin mq-tablet   { @media (min-width: $bp-tablet)  { @content; } }
+@mixin mq-desktop  { @media (min-width: $bp-desktop) { @content; } }
+@mixin mq-mobile   { @media (max-width: #{ $bp-tablet - 1 }) { @content; } }
+
+/* ==========================================================================
+   LEGACY/BOOTSTRAP VARIABLE ALIASES (preserve existing names)
+   ========================================================================== */
+
+/*-- scss:defaults --*/
+$pink:         $color-accent;
+$link:         $color-accent;
+$dark:         $color-dark;
+$accent:       $color-accent !default;
+$navbar-bg:    $color-bg !default;
+$navbar-fg:    $color-text-muted;
+$navbar-hl:    $color-accent;
+$primary:      $color-accent !default;
+
+/* Hero-specific aliases used in rules below */
+$hero-background:           $color-bg;
+$hero-foreground:           $color-text;
+$hero-secondary:            $color-hero-secondary;
+$hero-secondary-foreground: $color-text;
+$hero-muted-foreground:     $color-hero-muted;
+
+/* Body colors */
+$body-bg:    $color-bg !default;
+$body-color: $color-text !default;
+
+/* Breakpoint aliases used in rules below */
+$breakpoint-tablet:  $bp-tablet;
+$breakpoint-desktop: $bp-desktop;
+
+/* ==========================================================================
+   GLOBAL RULES
+   ========================================================================== */
 
 /*-- scss:rules --*/
+::selection {
+  background: $color-accent;
+  color: $color-selection-fg;
+}
+
+.nav-link { font-weight: 700; }
+
+#quarto-search button:hover .aa-DetachedSearchButtonIcon svg {
+  fill: $color-accent;
+  font-weight: 700;
+}
 
 .navbar-title {
   &:hover > .icon-line {
-      color: $pink;
-      animation: line-expand 600ms;
-    }
+    background: $color-text-muted;
+    animation: line-expand 600ms;
+  }
 
   .icon-line {
     display: block;
@@ -43,32 +114,187 @@ $h2-font-size: 2rem !default;
 }
 
 @keyframes line-expand {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0%; }
+  to   { width: 100%; }
 }
 
-// Footer styles
-.nav-footer {
-background-color: #F4F4F5;
-}
+/* Footer styles */
+.nav-footer { background-color: $color-bg; }
 
 .nav-footer a {
   color: $link;
-  text-decoration-color:$pink;
+  text-decoration-color: $pink;
 }
 
 .nav-footer a:hover {
-  background: $pink; 
-  color: #000000;
+  background: $pink;
+  color: $color-bg;
 }
-  
+
 .nav-footer a.connect:hover {
   color: $pink;
   background: transparent;
 }
 
+/* ==========================================================================
+   HERO SECTION STYLES
+   ========================================================================== */
 
+.hero-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  // background: $hero-gradient-subtle;
+  // font-family: Inter, system-ui, sans-serif;
+}
+
+.hero-content {
+  /* Mobile (base) */
+  max-width: $breakpoint-desktop;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+
+  /* Mobile-only tweaks */
+  @media (max-width: #{ $breakpoint-tablet - 1 }) {
+    padding: 80px 24px;
+    text-align: center;
+    grid-template-rows: auto 1fr;
+  }
+
+  /* Tablet and up */
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr 1.5fr;
+    align-items: stretch;
+  }
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 110%;
+  min-height: 0;
+
+  @media (max-width: #{ $breakpoint-tablet - 1 }) {
+    max-height: 500px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: 0.9;
+    // box-shadow: $hero-shadow-soft;
+    border-radius: 8px;
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.hero-title {
+  font-size: $hero-title-size-mobile;
+  font-weight: $headings-font-weight;
+  color: $hero-foreground;
+  line-height: 1.2;
+  font-family: $headings-font-family;
+  margin: 0px;
+  padding: 0px;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $hero-title-size-desktop;
+  }
+}
+
+.hero-description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1.3rem;
+  color: $hero-muted-foreground;
+  line-height: 1.6;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+
+  @media (max-width: #{ $breakpoint-tablet - 1 }) {
+    font-size: 1rem;
+  }
+
+  p { margin: 0; }
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 0px;
+
+  @media (max-width: #{ $breakpoint-tablet - 1 }) {
+    justify-content: center;
+  }
+
+  .tag {
+    padding: 4px 12px;
+    background: $hero-secondary;
+    color: $hero-secondary-foreground;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: $body-font-family;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px -2px hsl(220 10% 45% / 0.15);
+      background: lighten($accent, 30%);
+      color: darken($accent, 20%);
+    }
+  }
+}
+
+.hero-cta {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @media (max-width: #{ $breakpoint-tablet - 1 }) {
+    justify-content: center;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &.btn-primary {
+    background-color: $color-primary-ink;
+    border: 2px solid $color-primary-ink;
+    color: #fff;
+  }
+
+  &.btn-secondary {
+    background-color: transparent;
+    border: 2px solid $color-text-muted;
+    color: $color-text-muted;
+  }
+
+  &:hover {
+    background-color: $accent;
+    border: 2px solid $accent;
+    color: #fff;
+  }
+}

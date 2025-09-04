@@ -18,10 +18,10 @@ website:
     - icon: github
       href: https://github.com/mirianlima/mirianlima.github.io
     right:
-    - text: "Blog"
+    - text: "Blog /"
       aria-label: "Blog"
       href: blog/index.qmd
-        # aria-label: "About Me"
+        # aria-label: "About /"
         # href: about/index.qmd
         
   page-footer:  
