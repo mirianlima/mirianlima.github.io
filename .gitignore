@@ -6,5 +6,7 @@
 
 /adobe_creatives/
 /_archive/
+/_about/
 /.quarto/
+/.vscode/
 /blog/posts/_2024-08-12-duckdb-motherduck/data/
