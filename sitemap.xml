@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mirianlima.github.io/index.html</loc>
-    <lastmod>2024-11-01T20:00:55.258Z</lastmod>
-  </url>
-  <url>
     <loc>https://mirianlima.github.io/blog/index.html</loc>
-    <lastmod>2024-11-01T20:00:55.234Z</lastmod>
+    <lastmod>2025-09-04T21:03:03.098Z</lastmod>
   </url>
   <url>
-    <loc>https://mirianlima.github.io/about/index.html</loc>
-    <lastmod>2024-11-01T20:00:55.118Z</lastmod>
+    <loc>https://mirianlima.github.io/index.html</loc>
+    <lastmod>2025-09-04T21:03:03.120Z</lastmod>
   </url>
   <url>
     <loc>https://mirianlima.github.io/blog/posts/2024-10-31-dpi-composable-data-systems/index.html</loc>
-    <lastmod>2024-11-01T20:00:55.234Z</lastmod>
+    <lastmod>2025-09-04T21:03:03.098Z</lastmod>
   </url>
 </urlset>

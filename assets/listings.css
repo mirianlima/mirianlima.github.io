@@ -1,0 +1,22 @@
+/* page title  */
+#title-block-header.quarto-title-block.default .quarto-title .title {
+  text-align: center;
+  padding-bottom: 0px;
+  color: #868187;
+}
+
+/* text below page title */
+.description p {
+  text-align: center; 
+  padding: 0 0 5em 0;
+}
+
+/* listing cards  */
+.quarto-post {
+  border-bottom: 1px solid #E4DDD7 !important; 
+}
+
+.quarto-post .thumbnail img {
+    max-height: 150px;    
+    object-fit: cover;      
+}
