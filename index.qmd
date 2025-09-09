@@ -35,14 +35,11 @@ format: html
 
                 <div class="hero-description">
                     <p>
-                        Thanks for stopping by.
-                    </p>
-                    <p>
-                        Data is my playground. From wrangling to visualization to modeling, I love diving into the details.
+                        Data is my playground. From wrangling to visualization to modeling, <br> I love diving into the details.
                         I build tools that open up lakehouse analytics, enabling policy analysts to explore gigabytes of data—no coding required.
                     </p>
                     <p>
-                        Dive in to explore posts, projects, and reflections as I navigate new frontiers in data bit by bit!
+                        Dive in to explore posts, projects, and reflections <br> as I navigate new frontiers in data bit by bit!
                     </p>
                 </div>
 

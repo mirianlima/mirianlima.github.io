@@ -1,0 +1,79 @@
+meta:
+  name: "Mirian Lima"
+  links:
+    home: https://mirianlima.github.io
+    github: https://github.com/mirianlima/mirianlima.github.io
+
+color:
+  palette:
+    # Primary colors
+    accent-orange:    "#FF5C00"
+    
+    # Text colors
+    text-primary:     "#676169"
+    text-muted:       "#868187"
+    text-heading:     "#514E54"
+    
+    # Background colors
+    bg-main:          "#fafcf8"
+    
+    # UI colors
+    hero-secondary:   "#E4DDD7"
+    hero-muted:       "#717980"
+    selection-fg:     "#F9FCF7"
+    
+    # Standard colors
+    black:            "#000000"
+    white:            "#FFFFFF"
+  
+  # Semantic color mappings
+  foreground:     text-primary
+  background:     bg-main
+  primary:        bg-main
+
+typography:
+  # Font definitions
+  fonts:
+    - family: "Raleway"
+      source: google
+      weight: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+      style: [normal, italic]
+    
+    - family: "Source Sans Pro"
+      source: google
+      weight: [300, 400, 600, 700]
+      style: normal
+    
+    - family: "Fira Code"
+      source: google
+      weight: [400]
+  
+  # Base typography settings
+  base:
+    family: "Source Sans Pro"
+    weight: 400
+    line-height: 1.6
+  
+  # Headings
+  headings:
+    family: "Raleway"
+    weight: 600
+    line-height: 1.2
+  
+  # Links
+  link:
+    weight: 400
+    decoration: none
+    color: "#FF5C00"
+  
+  # Code typography
+  monospace:
+    family: "Fira Code"
+    size: "0.875rem"
+  
+  monospace-inline:
+    background-color: "#f0f0f0"
+  
+  monospace-block:
+    background-color: "#f8f8f8"
+

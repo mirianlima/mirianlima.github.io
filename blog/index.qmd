@@ -15,10 +15,4 @@ listing:
 
 toc: false
 page-layout: full
-
-
-header-includes: >
-  <link rel="stylesheet" href="../assets/listings.css">
-resources:
-  - ../assets/listings.css 
 ---

@@ -8,7 +8,7 @@ website:
   title: "Mirian Lima"
   site-url: https://mirianlima.github.io/
   description: "Policy Researcher and data expert, applying economic development data science in favor of evidence-based public policy making."
-  favicon: assets/fav.png
+  favicon: assets/favicon.png
   page-navigation: true
   back-to-top-navigation: true
   
@@ -34,7 +34,7 @@ website:
 
 format:
   html:
-    theme: [cosmo, assets/main.scss]
+    theme: [cosmo, brand, assets/custom.scss]
     toc: true
     pagetitle: "{{< meta title >}} | Mirian Lima"
     lightbox: true
@@ -44,3 +44,4 @@ format:
 
 execute: 
   freeze: auto
+  cache: false
