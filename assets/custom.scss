@@ -1,0 +1,304 @@
+/*-- scss:defaults --*/
+
+// Text sizes
+$h1-font-size: 3rem;
+$hero-title-size-mobile: 3.5rem;
+$hero-title-size-desktop: 6rem;
+
+// Breakpoints for responsive design
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+
+/*-- scss:rules --*/
+
+/* ==========================================================================
+   GLOBAL STYLES
+   ========================================================================== */
+
+/* =========================
+   Text Selection
+   ========================= */
+::selection {
+  background: $brand-accent-orange;
+  color: $brand-selection-fg;
+}
+
+/* =========================
+   Navbar
+   ========================= */
+
+// Navbar global rules
+.navbar {
+  * {
+    color: $brand-text-muted;
+    &:hover {
+      color: $brand-accent-orange;
+    }
+  }
+}
+
+// Title/brand with animated underline
+.navbar-title {
+  .icon-line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: -6px auto;
+    background: $brand-accent-orange;
+    display: table;
+  }
+
+  &:hover > .icon-line {
+    background: $brand-text-muted;
+    animation: line-expand 600ms;
+  }
+}
+
+// Link emphasis
+.nav-link {
+  font-weight: 700;
+}
+
+// Animation
+@keyframes line-expand {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+// Search button hover effect
+#quarto-search button:hover .aa-DetachedSearchButtonIcon svg {
+  fill: $brand-accent-orange;
+  font-weight: 700;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.nav-footer {
+  background-color: $brand-bg-main;
+  
+  a {
+    color: $brand-accent-orange;
+    text-decoration-color: $brand-accent-orange;
+    
+    &:hover {
+      background: $brand-accent-orange;
+      color: $brand-bg-main;
+    }
+    
+    &.connect:hover {
+      color: $brand-accent-orange;
+      background: transparent;
+    }
+  }
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+.hero-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  /* Layout wrapper */
+  .hero-content {
+    // Base (mobile-first)
+    max-width: $breakpoint-desktop;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: center;
+
+    // Mobile-specific
+    @media (max-width: #{ $breakpoint-tablet - 1 }) {
+      padding: 80px 24px;
+      text-align: center;
+      grid-template-rows: auto 1fr;
+    }
+
+    // Tablet and up
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr 1.5fr;
+      align-items: stretch;
+    }
+  }
+
+  /* Image column */
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: 110%;
+    min-height: 0;
+
+    @media (max-width: #{ $breakpoint-tablet - 1 }) {
+      max-height: 500px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      opacity: 0.9;
+      border-radius: 8px;
+    }
+  }
+
+  /* Text column */
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    justify-content: center;
+    padding: 20px 0;
+
+    // Apply only on tablet and larger screens
+    @media (min-width: $breakpoint-tablet) {
+        align-items: flex-end;   // push blocks to right edge
+        text-align: right;       // align text content to the right
+    }
+
+    .hero-title {
+      font-size: $hero-title-size-mobile;
+      font-weight: 700;
+      color: $brand-text-primary;
+      line-height: 1.2;
+      font-family: "Raleway", sans-serif;
+      margin: 0;
+      padding: 0;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: $hero-title-size-desktop;
+      }
+    }
+
+    .hero-description {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-size: 1.3rem;
+      color: $brand-hero-muted;
+      line-height: 1.6;
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: 300;
+
+      @media (max-width: #{ $breakpoint-tablet - 1 }) {
+        font-size: 1rem;
+      }
+
+      p { margin: 0; }
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 0;
+
+      @media (max-width: #{ $breakpoint-tablet - 1 }) {
+        justify-content: center;
+      }
+
+      .tag {
+        padding: 4px 12px;
+        background: $brand-hero-secondary;
+        color: $brand-text-primary;
+        font-size: 0.875rem;
+        border-radius: 9999px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        font-family: "Source Sans Pro", sans-serif;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px -2px hsl(220 10% 45% / 0.15);
+          background: lighten($brand-accent-orange, 30%);
+          color: darken($brand-accent-orange, 20%);
+        }
+      }
+    }
+
+    .hero-cta {
+      margin-top: 24px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+
+      @media (max-width: #{ $breakpoint-tablet - 1 }) {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   BUTTON STYLES
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &.btn-primary {
+    background-color: $brand-text-heading;
+    border: 2px solid $brand-text-heading;
+    color: $brand-white;
+  }
+
+  &.btn-secondary {
+    background-color: transparent;
+    border: 2px solid $brand-text-muted;
+    color: $brand-text-muted;
+  }
+
+  &:hover {
+    background-color: $brand-accent-orange;
+    border: 2px solid $brand-accent-orange;
+    color: $brand-white;
+  }
+}
+
+/* ==========================================================================
+   LISTING PAGE STYLES
+   ========================================================================== */
+
+// Blog page title
+#title-block-header.quarto-title-block.default .quarto-title .title {
+  text-align: center;
+  padding-bottom: 0px;
+  color: #868187;
+}
+
+// text below page title
+.description p {
+  text-align: center; 
+  padding: 0 0 5em 0;
+}
+
+// listing cards
+.quarto-post {
+  border-bottom: 1px solid #E4DDD7 !important; 
+
+  .thumbnail img {
+    max-height: 150px;    
+    object-fit: cover;      
+ }
+}
+
+// Post sidebar
+.sidebar nav[role=doc-toc] ul>li>a {
+    font-weight: 300;
+    &.active{
+        font-weight: 400;
+    }
+}
+
