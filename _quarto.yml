@@ -17,6 +17,8 @@ website:
     tools:
     - icon: github
       href: https://github.com/mirianlima/mirianlima.github.io
+    - icon: linkedin
+      href: https://www.linkedin.com/in/spencerlima/
     right:
     - text: "Blog /"
       aria-label: "Blog"
